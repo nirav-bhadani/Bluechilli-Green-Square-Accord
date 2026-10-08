@@ -598,13 +598,6 @@
   background-position: left;
   pointer-events: none;
 }
-.featured-hero__image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
 .hero__eyebrow {
   color: #00857f;
   font-size: var(--step-0);
@@ -666,16 +659,21 @@
     flex-direction: column;
     align-items: stretch;
   }
+  /* No photo: the figure is just the four-colour arc band under the card */
   .featured-hero__visual > .featured-hero__figure {
     position: relative;
     inset: auto;
-    height: clamp(300px, 62vw, 460px);
+    flex: none;
+    height: 15.5vw;
+  }
+  .featured-hero__visual > .featured-hero__figure::after {
+    margin-top: 0;
   }
   .featured-hero__chat {
     order: -1;
     max-width: none;
     margin: 0;
-    padding: 0 var(--space-s-m) calc(var(--space-region) + var(--space-s));
+    padding: 0 var(--space-s-m) var(--space-l);
   }
 }
 
